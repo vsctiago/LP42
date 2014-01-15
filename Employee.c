@@ -16,6 +16,7 @@ Employee getEmployeeId(Employee employee) {
             val = true;
         } else {
             val = false;
+
             printf("Insert a valid ID: ");
             scanf("%lu", &employee.employeeId);
             limparBufferEntradaDados();
@@ -35,3 +36,17 @@ Employee addEmployee(Employee employees[], unsigned short int empNr) {
     return employees[empNr];
 }
 
+
+/*
+
+void createEmployeeFile(Employee employees) {
+    
+    FILE *pEmployee = fopen("Employees", "w");
+    if(pEmployee == (FILE *) NULL) {
+        puts("Couldn't create file.");
+    } else {
+        fwrite(employees, sizeof(Employee), EMP_MAX, pEmployee);
+        fclose(pEmployee);
+    }
+}
+*/

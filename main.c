@@ -10,7 +10,6 @@
 
 #include "Employee.h"
 #include "Station.h"
-#define EMP_MAX 20
 
 /*
  * 
