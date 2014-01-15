@@ -37,9 +37,8 @@ Employee addEmployee(Employee employees[], unsigned short int empNr) {
 }
 
 
-/*
 
-void createEmployeeFile(Employee employees) {
+void createEmployeeFile(Employee employees[]) {
     
     FILE *pEmployee = fopen("Employees", "w");
     if(pEmployee == (FILE *) NULL) {
@@ -49,4 +48,3 @@ void createEmployeeFile(Employee employees) {
         fclose(pEmployee);
     }
 }
-*/

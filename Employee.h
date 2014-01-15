@@ -22,6 +22,8 @@ Employee getEmployeeId(Employee employee);
 
 Employee addEmployee(Employee employees[], unsigned short int empNr);
 
+void createEmployeeFile(Employee employees[]);
+
 #ifdef	__cplusplus
 extern "C" {
 #endif
