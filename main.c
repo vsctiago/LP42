@@ -10,19 +10,18 @@
 
 #include "Employee.h"
 #include "Station.h"
+#include "Menu.h"
 
 /*
  * 
  */
 int main(int argc, char** argv) {
-    unsigned short int empNr;
     Employee employees[EMP_SIZE];
     
-    printf("Which position to add: ");//testing purpose
-    scanf("%lu", &empNr);
+    employees[EMP_SIZE] = readEmployeeFile(employees);
+    Menu(employees);
     
-    addEmployee(employees, empNr);
-    
+/*
     printf("%lu %c", employees[empNr].employeeId, NEWLINE);
     printf("%s %c", employees[empNr].general.name, NEWLINE);
     printf("%s %c", employees[empNr].general.address.streetName, NEWLINE);
@@ -38,6 +37,7 @@ int main(int argc, char** argv) {
         case HIGH: puts("HIGH");
         break;
     }
+*/
     
     
     

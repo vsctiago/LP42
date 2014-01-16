@@ -8,12 +8,16 @@
 
 General getName(General general) {
     bool val = false;
-    int i;
+    int i, check = 0;
     
     /* Keeps asking for a name until that name is valid.
      */
     do{
-        printf("Insert name: ");
+        if(check == 0) {
+            printf("Insert name: ");
+        } else {
+            printf("Insert a valid name: ");
+        }
         lerFrase(general.name, NAME_LENGTH);
         // for that goes through the entire array or until it reaches the end.
         for( i=0; i<NAME_LENGTH && general.name[i] != '\0'; i++){
@@ -24,22 +28,28 @@ General getName(General general) {
                 /* If it finds a position that doesn't contain either a letter 
                  * nor a space, breaks the for cycle.
                  */
+                
                 val = false;
                 break;
             }// if ends.
         }// for ends.
+        check = 1;
     } while(val == false);
     return general;
 }
 
 Address getStreetName(Address address) {
     bool val = false;
-    int i;
+    int i, check = 0;
     
     /* Keeps asking for a street name until that name is valid.
      */
     do {
-        printf("Insert street name: ");
+        if(check == 0) {
+            printf("Insert street name: ");
+        } else {
+            printf("Insert a valid street name: ");
+        }
         lerFrase(address.streetName, STREET_LENGTH);
         // for that goes through the entire array or until it reaches the end.
         for( i=0; i<STREET_LENGTH && address.streetName[i] != '\0'; i++){
@@ -54,15 +64,21 @@ Address getStreetName(Address address) {
                 break;
             }// if ends.
         }// for ends.
+        check = 1;
     } while(val == false);
     return address;
 }
 
 Address getNumber(Address address) {
     bool val = false;
+    int check = 0;
     
     do {
-        printf("Insert number: ");
+        if(check == 0) {
+            printf("Insert number: ");
+        } else {
+            printf("Insert a valid number: ");
+        }
         scanf("%hu", &address.number);
         limparBufferEntradaDados();
         // if checks if the number is between the right values.
@@ -74,6 +90,7 @@ Address getNumber(Address address) {
              */
             val = false;
         }// if ends.
+        check = 1;
     } while(val == false);
     return address;
 }
@@ -115,10 +132,14 @@ Address getPostalCode(Address address) {
 
 Address getCity(Address address) {
     bool val = false;
-    int i;
+    int i, check = 0;
     
     do {
-        printf("Insert City: ");
+        if(check == 0) {
+            printf("Insert city name: ");
+        } else {
+            printf("Insert a valid city name: ");
+        }
         lerFrase(address.city, CITY_LENGTH);
         // for that goes through the entire array or until it reaches the end.
         for( i=0; i<CITY_LENGTH && address.city[i] != '\0'; i++){
@@ -133,6 +154,7 @@ Address getCity(Address address) {
                 break;
             }// if ends.
         }// for ends.
+        check = 1;
     } while(val == false);
     return address;
 }
@@ -149,9 +171,14 @@ General getAddress(General general) {
 
 General getPhone(General general) {
     bool val = false;
+    int check = 0;
     
     do {
-        printf("Insert phone number: ");
+        if(check == 0) {
+            printf("Insert phone number: ");
+        } else {
+            printf("Insert a valid phone number: ");
+        }
         scanf("%lu", &general.phone);
         limparBufferEntradaDados();
         
@@ -168,6 +195,7 @@ General getPhone(General general) {
         } else {
             val = false;
         }
+        check = 1;
     } while(val == false);
     return general;
 }
@@ -175,9 +203,14 @@ General getPhone(General general) {
 General getLevel(General general) {
     bool val = false;
     char level;
+    int check = 0;
     
     do {
-        printf("Insert Level access: ");
+        if(check == 0) {
+            printf("Insert level access: ");
+        } else {
+            printf("Insert a valid level access: ");
+        }
         scanf("%c", &level);
         limparBufferEntradaDados();
         if (level == 'L' || level == 'l'){
@@ -192,6 +225,7 @@ General getLevel(General general) {
         } else {
             val = false;
         }
+        check = 1;
     } while(val == false);
     return general;
 }

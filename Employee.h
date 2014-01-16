@@ -22,7 +22,19 @@ Employee getEmployeeId(Employee employee);
 
 Employee addEmployee(Employee employees[], unsigned short int empNr);
 
+Employee modifyEmployee(Employee employee, int modOpt);
+
+Employee removeEmployee(Employee employees[], unsigned long int id);
+
+void listEmployees(Employee employees[]);
+
 void createEmployeeFile(Employee employees[]);
+
+Employee initEmployeeFile(Employee employees[]);
+
+Employee readEmployeeFile(Employee employees[]);
+
+void saveEmployeeFile(Employee employees[]);
 
 #ifdef	__cplusplus
 extern "C" {
