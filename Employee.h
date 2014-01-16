@@ -10,7 +10,7 @@
 
 #include <time.h>
 #include "General.h"
-#define EMP_MAX 20
+#define EMP_SIZE 20
 
 typedef struct employee {
     unsigned long int employeeId;

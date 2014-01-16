@@ -44,7 +44,27 @@ void createEmployeeFile(Employee employees[]) {
     if(pEmployee == (FILE *) NULL) {
         puts("Couldn't create file.");
     } else {
-        fwrite(employees, sizeof(Employee), EMP_MAX, pEmployee);
+        fwrite(employees, sizeof(Employee), EMP_SIZE, pEmployee);
+        fclose(pEmployee);
+    }
+}
+
+Employee initEmployeeFile(Employee employees[]) {
+    
+}
+
+Employee readEmployeeFile(Employee employees[]) {
+    
+    FILE *pEmployee = fopen("Employees", "r");
+    if (pEmployee == (FILE *) NULL) {
+        puts("File doesn't exist");
+        puts("Creating file now...");
+        createEmployeeFile(employees);
+        employees[EMP_SIZE] = initEmployeeFile(employees);
+        puts("File created.");
+        readEmployeeFile(employees);
+    } else {
+        fread(employees, sizeof(Employee), EMP_SIZE, pEmployee);
         fclose(pEmployee);
     }
 }

@@ -16,7 +16,7 @@
  */
 int main(int argc, char** argv) {
     unsigned short int empNr;
-    Employee employees[EMP_MAX];
+    Employee employees[EMP_SIZE];
     
     printf("Which position to add: ");//testing purpose
     scanf("%lu", &empNr);
