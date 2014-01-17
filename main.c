@@ -20,7 +20,7 @@ int main(int argc, char** argv) {
     
     employees[EMP_SIZE] = readEmployeeFile(employees);
     Menu(employees);
-    ooooooooooo
+    
 /*
     printf("%lu %c", employees[empNr].employeeId, NEWLINE);
     printf("%s %c", employees[empNr].general.name, NEWLINE);
