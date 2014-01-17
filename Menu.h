@@ -10,12 +10,17 @@
 
 #include "Utils.h"
 #include "Employee.h"
+#include "Station.h"
 
-void Menu(Employee employees[]);
+void Menu(Employee employees[], Station stations[]);
 
-void empMenu(Employee employees[]);
+void empMenu(Employee employees[], Station stations[]);
+
+void staMenu(Employee employees[], Station stations[]);
 
 int empModifyMenu();
+
+int staModifyMenu();
 
 
 #ifdef	__cplusplus

@@ -5,6 +5,17 @@
 
 #include "Employee.h"
 
+unsigned short int verifyEmpPosition(Employee employees[]) {
+    unsigned short int i;
+    
+    for(i=0; i<EMP_SIZE; i++) {
+        if(employees[i].employeeId == 0) {
+            return i;
+        }
+    }
+    return EOF;
+}
+
 Employee getEmployeeId(Employee employee) {
     bool val = false;
     int check = 0;
@@ -28,16 +39,16 @@ Employee getEmployeeId(Employee employee) {
     return employee;
 }
 
-Employee addEmployee(Employee employees[], unsigned short int empNr) {
+Employee addEmployee(Employee employee) {
     
-    employees[empNr] = getEmployeeId(employees[empNr]);
-    employees[empNr].general = getName(employees[empNr].general);
-    employees[empNr].general = getAddress(employees[empNr].general);
-    employees[empNr].general = getPhone(employees[empNr].general);
-    employees[empNr].general = getLevel(employees[empNr].general);
+    employee = getEmployeeId(employee);
+    employee.general = getName(employee.general);
+    employee.general = getAddress(employee.general);
+    employee.general = getPhone(employee.general);
+    employee.general = getLevel(employee.general);
     printf("Client added successfully. %c", NEWLINE);
     
-    return employees[empNr];
+    return employee;
 }
 
 Employee modifyEmployee(Employee employee, int modOpt) {

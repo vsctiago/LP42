@@ -18,9 +18,11 @@ typedef struct employee {
     //tm birthDay;
 } Employee;
 
+unsigned short int verifyEmpPosition(Employee employees[]);
+
 Employee getEmployeeId(Employee employee);
 
-Employee addEmployee(Employee employees[], unsigned short int empNr);
+Employee addEmployee(Employee employee);
 
 Employee modifyEmployee(Employee employee, int modOpt);
 

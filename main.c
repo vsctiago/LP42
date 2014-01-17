@@ -17,9 +17,12 @@
  */
 int main(int argc, char** argv) {
     Employee employees[EMP_SIZE];
+    Station stations[STA_SIZE];
     
     employees[EMP_SIZE] = readEmployeeFile(employees);
-    Menu(employees);
+    stations[STA_SIZE] = readStationFile(stations);
+    
+    Menu(employees, stations);
     
 /*
     printf("%lu %c", employees[empNr].employeeId, NEWLINE);
